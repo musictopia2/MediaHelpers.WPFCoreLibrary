@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+	<TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+	<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+	<UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
+	<IsPackable>false</IsPackable>
+	<Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\autoscroll.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\basichelpers.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\center.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\clipboard.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\elementselector.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\fullscreen.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\highlighter.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\hover.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\keystroke.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\operatingsystemhelpers.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\Resize.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\ResizeModule.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\scrolllistener.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\selectalltext.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\simplecarousel.js" />
+    <Content Remove="C:\Users\music\.nuget\packages\basicblazorlibrary\2.0.1\contentFiles\any\net6.0\wwwroot\text.js" />
+  </ItemGroup>
+	<ItemGroup>
+		<Using Remove="System.Windows.Forms"/>
+		<Using Remove="System.Drawing"/>
+	</ItemGroup>
+  
+	<ItemGroup>
+		<COMReference Include="Shell32.dll">
+			<Guid>50a7e9b0-70ef-11d1-b75a-00a0c90564fe</Guid>
+			<VersionMajor>1</VersionMajor>
+			<VersionMinor>0</VersionMinor>
+			<WrapperTool>tlbimp</WrapperTool>
+			<Lcid>0</Lcid>
+			<Isolated>false</Isolated>
+		</COMReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BasicBlazorLibrary" Version="2.0.1" />
+		<PackageReference Include="CommonBasicLibraries" Version="4.0.3" />
+		<PackageReference Include="MediaHelpers.BlazorCoreLibrary" Version="1.0.1" />
+		<PackageReference Include="MediaHelpers.CoreLibrary" Version="1.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="6.0.101-preview.10.2068" />
+		<PackageReference Include="WindowsKeyboardCapture" Version="1.0.1" />
+	</ItemGroup>
+
+</Project>
