@@ -25,3 +25,4 @@ global using MediaHelpers.CoreLibrary.Video.DatabaseInterfaces.TVShows;
 global using MediaHelpers.CoreLibrary.Video.DatabaseInterfaces.Movies;
 global using MediaHelpers.WPFCoreLibrary.Helpers;
 global using WindowsKeyboardCapture;
+global using length = MediaHelpers.MediaLengthWindowsLibrary.LengthClass;
