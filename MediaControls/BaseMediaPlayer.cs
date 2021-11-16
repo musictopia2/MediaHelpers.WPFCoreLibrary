@@ -147,7 +147,7 @@ public class BaseMediaPlayer : IBasicMediaPlayer
             throw new CustomBasicException($"Path At {TempPath} Does Not Exist");
         }
 
-        return MediaLengthWindowsLibrary.LengthClass.Length(TempPath);
+        return ll.Length(TempPath);
     }
     public event BasicDataFunctions.ErrorRaisedEventHandler? ErrorRaised;
     public virtual void AfterStartPlay() { }
@@ -194,7 +194,7 @@ public class BaseMediaPlayer : IBasicMediaPlayer
             LengthValue = TimeSpan.FromSeconds(length);
             _privateL = length;
             PositionValue = TimeSpan.FromSeconds(position);
-            MediaLength = MediaLengthWindowsLibrary.LengthClass.Length(TempPath);
+            MediaLength = ll.Length(TempPath);
             IsPlaying = true;
             bool sets = false;
 

@@ -1,4 +1,5 @@
-﻿namespace MediaHelpers.WPFCoreLibrary.Windows;
+﻿
+namespace MediaHelpers.WPFCoreLibrary.Windows;
 public static class StartUp
 {
     public static Window? MainWindow { get; set; }
@@ -13,6 +14,8 @@ public static class StartUp
             return _provides!;
         }
         _services.AddBlazorWebView();
+        _services.RegisterWPFServices();
+        _services.RegisterBlazorBeginningClasses();
         ExtraServiceProcesses?.Invoke(_services);
         _loaded = true;
         _provides = _services.BuildServiceProvider();
