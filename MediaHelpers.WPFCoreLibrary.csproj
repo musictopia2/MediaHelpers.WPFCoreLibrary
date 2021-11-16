@@ -36,7 +36,7 @@
 		<PackageReference Include="MediaHelpers.MediaLengthWindowsLibrary" Version="1.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="6.0.101-preview.10.2068" />
 		<PackageReference Include="WindowsKeyboardCapture" Version="1.0.1" />
-		<PackageReference Include="WPFStartupLibrary" Version="1.0.2" />
+		<PackageReference Include="WPFStartupLibrary" Version="1.0.3" />
 	</ItemGroup>
 
 </Project>
