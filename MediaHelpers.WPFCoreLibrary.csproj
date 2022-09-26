@@ -5,17 +5,17 @@
 	<UseWPF>true</UseWPF>
 	<Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<Version>3.0.1</Version>
+	<Version>3.0.3</Version>
   </PropertyGroup>
  
 
 	<ItemGroup>
-		<PackageReference Include="BasicBlazorLibrary" Version="4.0.1" />
-		<PackageReference Include="CommonBasicLibraries" Version="7.0.1" />
-		<PackageReference Include="MediaHelpers.BlazorCoreLibrary" Version="3.0.1" />
-		<PackageReference Include="MediaHelpers.CoreLibrary" Version="3.0.1" />
+		<PackageReference Include="BasicBlazorLibrary" Version="4.0.3" />
+		<PackageReference Include="CommonBasicLibraries" Version="7.0.6" />
+		<PackageReference Include="MediaHelpers.BlazorCoreLibrary" Version="3.0.5" />
+		<PackageReference Include="MediaHelpers.CoreLibrary" Version="3.0.7" />
 		<PackageReference Include="MediaHelpers.MediaLengthWindowsLibrary" Version="1.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="6.0.101-preview.10.2068" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="6.0.540" />
 		<PackageReference Include="WindowsKeyboardCapture" Version="3.0.1" />
 		<PackageReference Include="WPFStartupLibrary" Version="3.0.1" />
 	</ItemGroup>
