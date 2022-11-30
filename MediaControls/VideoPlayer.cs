@@ -1,5 +1,5 @@
 ﻿namespace MediaHelpers.WPFCoreLibrary.MediaControls;
-public class VideoPlayer : BaseMediaPlayer, IVideoPlayer
+public class VideoPlayer : BaseMediaPlayer, IFullVideoPlayer
 {
     public static Window? CurrentWindow { get; set; }
     private DispatcherTimer? _timer;
@@ -466,7 +466,7 @@ public class VideoPlayer : BaseMediaPlayer, IVideoPlayer
     {
         StartCursor();
     }
-    bool IVideoPlayer.IsCursorVisible()
+    bool IFullVideoPlayer.IsCursorVisible()
     {
         return IsCursorVisible;
     }

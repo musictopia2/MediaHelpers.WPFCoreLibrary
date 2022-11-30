@@ -147,7 +147,7 @@ public class BaseMediaPlayer : IBasicMediaPlayer
             throw new CustomBasicException($"Path At {TempPath} Does Not Exist");
         }
 
-        return ll.Length(TempPath);
+        return ll1.Length(TempPath);
     }
     public event BasicDataFunctions.ErrorRaisedEventHandler? ErrorRaised;
     public virtual void AfterStartPlay() { }
@@ -194,7 +194,7 @@ public class BaseMediaPlayer : IBasicMediaPlayer
             LengthValue = TimeSpan.FromSeconds(length);
             _privateL = length;
             PositionValue = TimeSpan.FromSeconds(position);
-            MediaLength = ll.Length(TempPath);
+            MediaLength = ll1.Length(TempPath);
             IsPlaying = true;
             bool sets = false;
 
@@ -211,12 +211,15 @@ public class BaseMediaPlayer : IBasicMediaPlayer
                         sets = true;
                     }
                     else if (_isOpened == true || Element1.Position.TotalSeconds >= position)
+                    {
                         break;
-
+                    }
                 } while (true);
             }
             else
+            {
                 Element1.Play();
+            }
             DidInit = true;
             AfterStartPlay(); 
         }

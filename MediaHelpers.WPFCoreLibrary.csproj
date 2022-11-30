@@ -1,23 +1,27 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-	  <TargetFramework>net6.0-windows</TargetFramework>
+	  <TargetFramework>net7.0-windows</TargetFramework>
 	<UseWPF>true</UseWPF>
 	<Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<Version>3.0.3</Version>
+	<Version>7.0.1</Version>
   </PropertyGroup>
  
 
 	<ItemGroup>
-		<PackageReference Include="BasicBlazorLibrary" Version="4.0.3" />
-		<PackageReference Include="CommonBasicLibraries" Version="7.0.6" />
-		<PackageReference Include="MediaHelpers.BlazorCoreLibrary" Version="3.0.5" />
-		<PackageReference Include="MediaHelpers.CoreLibrary" Version="3.0.7" />
+		<PackageReference Include="BasicBlazorLibrary" Version="7.0.13" />
+		<PackageReference Include="CommonBasicLibraries" Version="7.0.10" />
+		
+		
+		<PackageReference Include="MediaHelpers.CoreLibrary" Version="7.0.1" />
 		<PackageReference Include="MediaHelpers.MediaLengthWindowsLibrary" Version="1.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="6.0.540" />
-		<PackageReference Include="WindowsKeyboardCapture" Version="3.0.1" />
-		<PackageReference Include="WPFStartupLibrary" Version="3.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="7.0.49" />
+		<PackageReference Include="WindowsKeyboardCapture" Version="7.0.1" />
+		<PackageReference Include="WPFStartupLibrary" Version="7.0.2" />
 	</ItemGroup>
+ 
+
+	
 
 </Project>

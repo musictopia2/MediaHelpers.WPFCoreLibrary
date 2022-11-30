@@ -21,7 +21,7 @@ public class MainDisplay : UserControl, IDisplay
     {
         MainVM!.PlayButtonVisible = false;
         MainVM.CloseButtonVisible = false;
-        MainVM.StateHasChanged?.Invoke(); 
+        MainVM.StateHasChanged?.Invoke();
     }
     protected virtual void PossibleShowButtons()
     {

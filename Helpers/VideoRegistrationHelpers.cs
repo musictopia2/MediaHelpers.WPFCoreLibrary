@@ -32,11 +32,13 @@ public static class VideoRegistrationHelpers
         services.AddSingleton<TelevisionContainerClass>();
         services.AddSingleton<TelevisionLoaderViewModel>();
         services.AddSingleton<IVideoPlayerViewModel>(pp => pp.GetRequiredService<TelevisionLoaderViewModel>());
+        services.AddSingleton<ITelevisionLoaderViewModel>(pp => pp.GetRequiredService<TelevisionLoaderViewModel>());
     }
     public static void RegisterVideoPlayer(this ServiceCollection services)
     {
         services.AddSingleton<VideoPlayer>();
-        services.AddSingleton<IVideoPlayer>(pp => pp.GetRequiredService<VideoPlayer>());
+        services.AddSingleton<IFullVideoPlayer>(pp => pp.GetRequiredService<VideoPlayer>());
+        services.AddSingleton<ISimpleVideoPlayer>(pp => pp.GetRequiredService<VideoPlayer>());
     }
     public static void RegisterMoviesProcesses(this ServiceCollection services)
     {
