@@ -1,4 +1,5 @@
-﻿namespace MediaHelpers.WPFCoreLibrary.MediaControls;
+﻿
+namespace MediaHelpers.WPFCoreLibrary.MediaControls;
 public class BaseMediaPlayer : IBasicMediaPlayer
 {
     public MediaElement Element1;
@@ -132,7 +133,7 @@ public class BaseMediaPlayer : IBasicMediaPlayer
     public virtual void StopPlay()
     {
         IsPlaying = false;
-        Element1.Stop();
+        Execute.OnUIThread(Element1.Stop); //had to put in the threading.
     }
     private int _privateL = -1;
     public int Length()
