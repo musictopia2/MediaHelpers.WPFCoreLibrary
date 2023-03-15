@@ -26,6 +26,11 @@ public class MusicDisplay : UserControl
         }
         if (key == EnumKey.MediaPlayPause && _pauses.CanPause == true) 
         {
+            if (BasicSongProgressViewModel.CanMusicPlay() == false)
+            {
+                return; //because if music can't even play, then ignore.  no popup because maybe another system is used (?)
+                //if i run into problems, then may need a button to let me know the status.
+            }
             _pauses.PlayPause();
         }
     }
