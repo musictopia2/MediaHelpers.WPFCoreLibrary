@@ -23,4 +23,13 @@ public class MP3Player : BaseMediaPlayer, IMP3Player
         var songL = Length();
         return $"{Math.Floor((double)songL / 60)}:{GetRight(songL)}";
     }
+
+    EnumMusicState IMP3Player.GetState()
+    {
+        if (IsPlaying == true)
+        {
+            return EnumMusicState.Playing;
+        }
+        return EnumMusicState.Paused;
+    }
 }

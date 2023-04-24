@@ -1,5 +1,4 @@
-﻿
-namespace MediaHelpers.WPFCoreLibrary.MediaControls;
+﻿namespace MediaHelpers.WPFCoreLibrary.MediaControls;
 public class BaseMediaPlayer : IBasicMediaPlayer
 {
     public MediaElement Element1;
