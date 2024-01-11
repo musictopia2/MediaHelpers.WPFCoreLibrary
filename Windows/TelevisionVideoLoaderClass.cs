@@ -1,12 +1,9 @@
 ﻿namespace MediaHelpers.WPFCoreLibrary.Windows;
-public class TelevisionVideoLoaderClass : ITelevisionVideoLoader
+public class TelevisionVideoLoaderClass(TelevisionContainerClass container
+        ) : ITelevisionVideoLoader
 {
-    private readonly TelevisionContainerClass _container;
-    public TelevisionVideoLoaderClass(TelevisionContainerClass container
-        )
-    {
-        _container = container;
-    }
+    private readonly TelevisionContainerClass _container = container;
+
     void ITelevisionVideoLoader.ChoseEpisode(IEpisodeTable episode)
     {
         _container.EpisodeChosen = episode;

@@ -1,44 +1,60 @@
 ﻿namespace MediaHelpers.WPFCoreLibrary.Helpers;
 public static class VideoRegistrationHelpers
 {
-    public static void RegisterTelevisionFirstrunProcesses(this ServiceCollection services)
+    //public static void RegisterTelevisionFirstrunProcesses(this ServiceCollection services)
+    //{
+    //    services.AddSingleton<ITelevisionListLogic, TelevisionListFirstrunLogic>();
+    //    services.AddSingleton<ITelevisionShellViewModel, TelevisionFirstrunShellViewModel>();
+    //    services.AddSingleton<ITelevisionLoaderLogic, TelevisionFirstrunLoaderLogic>();
+    //    services.RegisterBaseTelevisionProcesses();
+    //}
+    //public static void RegisterTelevisionRerunProcesses(this ServiceCollection services)
+    //{
+    //    services.AddSingleton<ITelevisionListLogic, TelevisionListRerunLogic>();
+    //    services.AddSingleton<ITelevisionShellLogic, TelevisionRerunsShellLogic>();
+    //    services.AddSingleton<ITelevisionShellViewModel, TelevisionRerunsShellViewModel>();
+    //    services.AddSingleton<ITelevisionHolidayLogic, TelevisionHolidayLogic>();
+    //    services.AddSingleton<TelevisionHolidayViewModel>();
+    //    services.AddSingleton<ITelevisionLoaderLogic, TelevisionRerunsLoaderLogic>();
+    //    services.RegisterBaseTelevisionProcesses();
+    //}
+    
+    public static IServiceCollection RegisterWPFTelevisionRerunProcesses(this IServiceCollection services)
     {
-        services.AddSingleton<ITelevisionListLogic, TelevisionListFirstrunLogic>();
-        services.AddSingleton<ITelevisionShellViewModel, TelevisionFirstrunShellViewModel>();
-        services.AddSingleton<ITelevisionLoaderLogic, TelevisionFirstrunLoaderLogic>();
-        services.RegisterBaseTelevisionProcesses();
-    }
-    public static void RegisterTelevisionRerunProcesses(this ServiceCollection services)
-    {
-        services.AddSingleton<ITelevisionListLogic, TelevisionListRerunLogic>();
-        services.AddSingleton<ITelevisionShellLogic, TelevisionRerunsShellLogic>();
-        services.AddSingleton<ITelevisionShellViewModel, TelevisionRerunsShellViewModel>();
-        services.AddSingleton<ITelevisionHolidayLogic, TelevisionHolidayLogic>();
-        services.AddSingleton<TelevisionHolidayViewModel>();
-        services.AddSingleton<ITelevisionLoaderLogic, TelevisionRerunsLoaderLogic>();
-        services.RegisterBaseTelevisionProcesses();
-    }
-    public static ServiceCollection RegisterMockRemoteControls(this ServiceCollection services)
-    {
-        services.AddSingleton<ITelevisionRemoteControlHostService, MockTelevisionRemoteControlHostService>();
+        services.RegisterCoreLocalRerunLoaderTelevisionServices()
+            .RegisterWPFLoaderBaseProcesses()
+            .RegisterWPFTelevisionRerunProcesses();
         return services;
     }
-    public static void RegisterBaseTelevisionProcesses(this ServiceCollection services)
+    private static IServiceCollection RegisterWPFLoaderBaseProcesses(this IServiceCollection services)
     {
-        services.RegisterVideoPlayer();
-        services.AddTransient<IDisplay, MainDisplay>();
-        services.AddSingleton<TelevisionListViewModel>();
-        services.AddSingleton<ITelevisionVideoLoader, TelevisionVideoLoaderClass>();
-        services.AddSingleton<TelevisionContainerClass>();
-        services.AddSingleton<TelevisionLoaderViewModel>();
-        services.AddSingleton<IVideoPlayerViewModel>(pp => pp.GetRequiredService<TelevisionLoaderViewModel>());
-        services.AddSingleton<ITelevisionLoaderViewModel>(pp => pp.GetRequiredService<TelevisionLoaderViewModel>());
+        services.AddSingleton<ITelevisionVideoLoader, TelevisionVideoLoaderClass>()
+            .RegisterVideoPlayer();
+        return services;
     }
-    public static void RegisterVideoPlayer(this ServiceCollection services)
+
+    //public static ServiceCollection RegisterMockRemoteControls(this ServiceCollection services)
+    //{
+    //    services.AddSingleton<ITelevisionRemoteControlHostService, MockTelevisionRemoteControlHostService>();
+    //    return services;
+    //}
+    //public static void RegisterBaseTelevisionProcesses(this ServiceCollection services)
+    //{
+    //    services.RegisterVideoPlayer();
+    //    services.AddTransient<IDisplay, MainDisplay>();
+    //    services.AddSingleton<TelevisionListViewModel>();
+    //    services.AddSingleton<ITelevisionVideoLoader, TelevisionVideoLoaderClass>();
+    //    services.AddSingleton<TelevisionContainerClass>();
+    //    services.AddSingleton<TelevisionLoaderViewModel>();
+    //    services.AddSingleton<IVideoPlayerViewModel>(pp => pp.GetRequiredService<TelevisionLoaderViewModel>());
+    //    services.AddSingleton<ITelevisionLoaderViewModel>(pp => pp.GetRequiredService<TelevisionLoaderViewModel>());
+    //}
+    public static IServiceCollection RegisterVideoPlayer(this IServiceCollection services)
     {
         services.AddSingleton<VideoPlayer>();
         services.AddSingleton<IFullVideoPlayer>(pp => pp.GetRequiredService<VideoPlayer>());
         services.AddSingleton<ISimpleVideoPlayer>(pp => pp.GetRequiredService<VideoPlayer>());
+        return services;
     }
     public static void RegisterMoviesProcesses(this ServiceCollection services)
     {
