@@ -20,6 +20,7 @@ public class VideoPlayer : BaseMediaPlayer, IFullVideoPlayer
     public event Action? ResumeLater;
     public event Action? MouseClick;
     public event Action<bool>? CursorChanged;
+    public static bool IsTesting { get; set; } //if testing, then can't be full screen.
     public bool NoCursor { get; set; }
     public int UpTo { get; set; }
     public bool IsCursorVisible
@@ -30,7 +31,7 @@ public class VideoPlayer : BaseMediaPlayer, IFullVideoPlayer
         }
         set
         {
-            if (NoCursor == true)
+            if (NoCursor == true || IsTesting)
             {
                 return;
             }
@@ -118,7 +119,7 @@ public class VideoPlayer : BaseMediaPlayer, IFullVideoPlayer
         set
         {
             _isFullScreen = value;
-            if (NoCursor == true)
+            if (NoCursor == true || IsTesting)
             {
                 return;
             }
@@ -317,6 +318,10 @@ public class VideoPlayer : BaseMediaPlayer, IFullVideoPlayer
     }
     public void TimerHideCallback(object? sender, EventArgs e)
     {
+        if (IsTesting)
+        {
+            return;
+        }
         if (_isFullScreen == false)
         {
             return;
