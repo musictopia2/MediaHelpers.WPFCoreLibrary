@@ -11,7 +11,7 @@ public class VideoPlayer : BaseMediaPlayer, IFullVideoPlayer
     private int _previousWidth;
     private int _previousHeight;
     private int _secs;
-    private BasicList<SkipSceneClass> _privateSkipList = new();
+    private BasicList<SkipSceneClass> _privateSkipList = [];
     private int _oldSecs;
     private bool _isInit;
     private readonly TimeSpan _limit = default;
