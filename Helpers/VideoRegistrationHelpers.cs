@@ -54,6 +54,7 @@ public static class VideoRegistrationHelpers
         services.AddSingleton<VideoPlayer>();
         services.AddSingleton<IFullVideoPlayer>(pp => pp.GetRequiredService<VideoPlayer>());
         services.AddSingleton<ISimpleVideoPlayer>(pp => pp.GetRequiredService<VideoPlayer>());
+        services.AddSingleton<IPausePlayer>(pp => pp.GetRequiredService<VideoPlayer>());
         return services;
     }
     public static void RegisterMoviesProcesses(this ServiceCollection services)

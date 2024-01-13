@@ -5,7 +5,7 @@
 	<UseWPF>true</UseWPF>
 	<Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<Version>8.0.3</Version>
+	<Version>8.0.5</Version>
   </PropertyGroup>
  
 
@@ -14,11 +14,11 @@
 		<PackageReference Include="CommonBasicLibraries" Version="8.0.1" />
 		
 		
-		<PackageReference Include="MediaHelpers.CoreLibrary" Version="8.0.17" />
+		<PackageReference Include="MediaHelpers.CoreLibrary" Version="8.0.24" />
 		<PackageReference Include="MediaHelpers.MediaLengthWindowsLibrary" Version="1.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="8.0.3" />
 		<PackageReference Include="WindowsKeyboardCapture" Version="8.0.1" />
-		<PackageReference Include="WPFStartupLibrary" Version="8.0.1" />
+		<PackageReference Include="WPFStartupLibrary" Version="8.0.2" />
 	</ItemGroup>
  
 
