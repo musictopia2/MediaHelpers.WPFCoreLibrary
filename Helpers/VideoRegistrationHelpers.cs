@@ -19,15 +19,17 @@ public static class VideoRegistrationHelpers
     //    services.RegisterBaseTelevisionProcesses();
     //}
     
-    public static IServiceCollection RegisterWPFTelevisionLoaderRerunProcesses(this IServiceCollection services)
+    public static IServiceCollection RegisterWPFTelevisionLoaderRerunProcesses<E>(this IServiceCollection services)
+        where E: class, IEpisodeTable
     {
-        services.RegisterCoreLocalRerunLoaderTelevisionServices()
-            .RegisterWPFLoaderBaseProcesses();
+        services.RegisterCoreLocalRerunLoaderTelevisionServices<E>()
+            .RegisterWPFLoaderBaseProcesses<E>();
         return services;
     }
-    private static IServiceCollection RegisterWPFLoaderBaseProcesses(this IServiceCollection services)
+    private static IServiceCollection RegisterWPFLoaderBaseProcesses<E>(this IServiceCollection services)
+        where E : class, IEpisodeTable
     {
-        services.AddSingleton<ITelevisionVideoLoader, TelevisionVideoLoaderClass>()
+        services.AddSingleton<ITelevisionVideoLoader<E>, TelevisionVideoLoaderClass<E>>()
             .AddTransient<IDisplay, MainDisplay>()
             .RegisterVideoPlayer();
         return services;
