@@ -29,7 +29,7 @@ public static class VideoRegistrationHelpers
     private static IServiceCollection RegisterWPFLoaderBaseProcesses<E>(this IServiceCollection services)
         where E : class, IEpisodeTable
     {
-        services.AddSingleton<ITelevisionVideoLoader<E>, TelevisionVideoLoaderClass<E>>()
+        services.AddSingleton<TelevisionVideoLoaderClass<E>>()
             .AddTransient<IDisplay, MainDisplay>()
             .RegisterVideoPlayer();
         return services;

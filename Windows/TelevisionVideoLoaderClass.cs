@@ -1,11 +1,9 @@
 ﻿namespace MediaHelpers.WPFCoreLibrary.Windows;
-public class TelevisionVideoLoaderClass<E>(TelevisionContainerClass<E> container
-        ) : ITelevisionVideoLoader<E>
+public class TelevisionVideoLoaderClass<E>(TelevisionContainerClass<E> container) 
     where E: class, IEpisodeTable
 {
     private readonly TelevisionContainerClass<E> _container = container;
-
-    void ITelevisionVideoLoader<E>.ChoseEpisode(E episode)
+    public void ChoseEpisode(E episode)
     {
         _container.EpisodeChosen = episode;
         MainVideoProgressComponent.ProgressRenderType = typeof(TelevisionBarComponent);

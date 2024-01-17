@@ -29,3 +29,4 @@ global using BasicBlazorLibrary.Helpers;
 global using WPFStartupLibrary;
 global using CommonBasicLibraries.MediaHelpers.Models;
 global using CommonBasicLibraries.BasicUIProcesses;
+global using Microsoft.AspNetCore.Components;
