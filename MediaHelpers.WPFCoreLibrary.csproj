@@ -5,16 +5,16 @@
 	<UseWPF>true</UseWPF>
 	<Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<Version>8.0.16</Version>
+	<Version>8.0.17</Version>
   </PropertyGroup>
  
 
 	<ItemGroup>
 		<PackageReference Include="BasicBlazorLibrary" Version="8.0.4" />
-		<PackageReference Include="CommonBasicLibraries" Version="8.0.3" />
+		<PackageReference Include="CommonBasicLibraries" Version="8.0.4" />
 		
 		
-		<PackageReference Include="MediaHelpers.CoreLibrary" Version="8.0.37" />
+		<PackageReference Include="MediaHelpers.CoreLibrary" Version="8.0.39" />
 		<PackageReference Include="MediaHelpers.MediaLengthWindowsLibrary" Version="1.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="8.0.3" />
 		<PackageReference Include="WindowsKeyboardCapture" Version="8.0.1" />
