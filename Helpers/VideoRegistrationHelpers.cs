@@ -1,32 +1,14 @@
 ﻿namespace MediaHelpers.WPFCoreLibrary.Helpers;
 public static class VideoRegistrationHelpers
 {
-    //public static void RegisterTelevisionFirstrunProcesses(this ServiceCollection services)
-    //{
-    //    services.AddSingleton<ITelevisionListLogic, TelevisionListFirstrunLogic>();
-    //    services.AddSingleton<ITelevisionShellViewModel, TelevisionFirstrunShellViewModel>();
-    //    services.AddSingleton<ITelevisionLoaderLogic, TelevisionFirstrunLoaderLogic>();
-    //    services.RegisterBaseTelevisionProcesses();
-    //}
-    //public static void RegisterTelevisionRerunProcesses(this ServiceCollection services)
-    //{
-    //    services.AddSingleton<ITelevisionListLogic, TelevisionListRerunLogic>();
-    //    services.AddSingleton<ITelevisionShellLogic, TelevisionRerunsShellLogic>();
-    //    services.AddSingleton<ITelevisionShellViewModel, TelevisionRerunsShellViewModel>();
-    //    services.AddSingleton<ITelevisionHolidayLogic, TelevisionHolidayLogic>();
-    //    services.AddSingleton<TelevisionHolidayViewModel>();
-    //    services.AddSingleton<ITelevisionLoaderLogic, TelevisionRerunsLoaderLogic>();
-    //    services.RegisterBaseTelevisionProcesses();
-    //}
-    
     public static IServiceCollection RegisterWPFTelevisionLoaderRerunProcesses<E>(this IServiceCollection services)
         where E: class, IEpisodeTable
     {
         services.RegisterCoreLocalRerunLoaderTelevisionServices<E>()
-            .RegisterWPFLoaderBaseProcesses<E>();
+            .RegisterWPFTelevisionLoaderBaseProcesses<E>();
         return services;
     }
-    private static IServiceCollection RegisterWPFLoaderBaseProcesses<E>(this IServiceCollection services)
+    public static IServiceCollection RegisterWPFTelevisionLoaderBaseProcesses<E>(this IServiceCollection services)
         where E : class, IEpisodeTable
     {
         services.AddSingleton<TelevisionVideoLoaderClass<E>>()
@@ -34,23 +16,6 @@ public static class VideoRegistrationHelpers
             .RegisterVideoPlayer();
         return services;
     }
-
-    //public static ServiceCollection RegisterMockRemoteControls(this ServiceCollection services)
-    //{
-    //    services.AddSingleton<ITelevisionRemoteControlHostService, MockTelevisionRemoteControlHostService>();
-    //    return services;
-    //}
-    //public static void RegisterBaseTelevisionProcesses(this ServiceCollection services)
-    //{
-    //    services.RegisterVideoPlayer();
-    //    services.AddTransient<IDisplay, MainDisplay>();
-    //    services.AddSingleton<TelevisionListViewModel>();
-    //    services.AddSingleton<ITelevisionVideoLoader, TelevisionVideoLoaderClass>();
-    //    services.AddSingleton<TelevisionContainerClass>();
-    //    services.AddSingleton<TelevisionLoaderViewModel>();
-    //    services.AddSingleton<IVideoPlayerViewModel>(pp => pp.GetRequiredService<TelevisionLoaderViewModel>());
-    //    services.AddSingleton<ITelevisionLoaderViewModel>(pp => pp.GetRequiredService<TelevisionLoaderViewModel>());
-    //}
     public static IServiceCollection RegisterVideoPlayer(this IServiceCollection services)
     {
         services.AddSingleton<VideoPlayer>();
