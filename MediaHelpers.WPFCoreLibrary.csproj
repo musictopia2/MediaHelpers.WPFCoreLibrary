@@ -1,27 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Razor">
-
   <PropertyGroup>
-	  <TargetFramework>net8.0-windows</TargetFramework>
-	<UseWPF>true</UseWPF>
-	<Nullable>enable</Nullable>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<Version>8.0.22</Version>
+    <Version>9.0.1</Version>
   </PropertyGroup>
- 
-
-	<ItemGroup>
-		<PackageReference Include="BasicBlazorLibrary" Version="8.0.7" />
-		<PackageReference Include="CommonBasicLibraries" Version="8.0.28" />
-		
-		
-		<PackageReference Include="MediaHelpers.CoreLibrary" Version="8.0.53" />
-		<PackageReference Include="MediaHelpers.MediaLengthWindowsLibrary" Version="1.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="8.0.20" />
-		<PackageReference Include="WindowsKeyboardCapture" Version="8.0.1" />
-		<PackageReference Include="WPFStartupLibrary" Version="8.0.2" />
-	</ItemGroup>
- 
-
-	
-
+  <ItemGroup>
+    <PackageReference Include="BasicBlazorLibrary" Version="9.0.1" />
+    <PackageReference Include="CommonBasicLibraries" Version="9.0.1" />
+    <PackageReference Include="MediaHelpers.CoreLibrary" Version="9.0.1" />
+    <PackageReference Include="MediaHelpers.MediaLengthWindowsLibrary" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="9.0.10" />
+    <PackageReference Include="WindowsKeyboardCapture" Version="9.0.1" />
+    <PackageReference Include="WPFStartupLibrary" Version="9.0.1" />
+  </ItemGroup>
 </Project>
