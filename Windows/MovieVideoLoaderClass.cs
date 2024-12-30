@@ -1,14 +1,10 @@
 ﻿namespace MediaHelpers.WPFCoreLibrary.Windows;
-public class MovieVideoLoaderClass : IMovieVideoLoader
+public class MovieVideoLoaderClass<M>(MovieContainerClass<M> container)
+    where M : class, IMainMovieTable
 {
-    private readonly MovieContainerClass _container;
-    public MovieVideoLoaderClass(MovieContainerClass container)
+    public void ChoseMovie(M movie)
     {
-        _container = container;
-    }
-    void IMovieVideoLoader.ChoseMovie(IMainMovieTable movie)
-    {
-        _container.MovieChosen = movie;
+        container.MovieChosen = movie;
         MainVideoProgressComponent.ProgressRenderType = typeof(MovieBarComponent);
         VideoWindow window = new();
         window.Show();

@@ -1,5 +1,5 @@
 namespace MediaHelpers.WPFCoreLibrary.Windows;
-public partial class WelcomeComponent<E>
+public partial class WelcomeTelevisionComponent<E>
     where E : class, IEpisodeTable
 {
     [Inject]

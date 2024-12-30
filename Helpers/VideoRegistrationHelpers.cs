@@ -24,16 +24,19 @@ public static class VideoRegistrationHelpers
         services.AddSingleton<IPausePlayer>(pp => pp.GetRequiredService<VideoPlayer>());
         return services;
     }
-    public static void RegisterMoviesProcesses(this ServiceCollection services)
+    public static IServiceCollection RegisterWPFMoviesLoaderBaseProcesses<M>(this IServiceCollection services)
+        where M : class, IMainMovieTable
     {
-        services.RegisterVideoPlayer();
-        services.AddSingleton<IDisplay, MovieDisplay>();
-        services.AddSingleton<MovieListViewModel>();
-        services.AddSingleton<IMovieListLogic, MovieListLogic>();
-        services.AddSingleton<MovieContainerClass>();
-        services.AddSingleton<IMovieLoaderLogic, MovieLoaderLogic>();
-        services.AddSingleton<IMovieVideoLoader, MovieVideoLoaderClass>();
-        services.AddSingleton<MovieLoaderViewModel>();
-        services.AddSingleton<IVideoPlayerViewModel>(pp => pp.GetRequiredService<MovieLoaderViewModel>());
+        services.AddSingleton<MovieVideoLoaderClass<M>>()
+            .AddTransient<IDisplay, MainDisplay>()
+            .RegisterVideoPlayer();
+        return services;
+    }
+    public static IServiceCollection RegisterWPFMoviesLoaderRerunProcesses<M>(this IServiceCollection services)
+        where M : class, IMainMovieTable
+    {
+        services.RegisterWPFMoviesLoaderBaseProcesses<M>()
+            .RegisterCoreLocalRerunLoaderMovieServices<M>();
+        return services;
     }
 }
