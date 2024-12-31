@@ -65,6 +65,10 @@ public class BaseMediaPlayer : IBasicMediaPlayer
     {
         get
         {
+            if (Element1.Source is null)
+            {
+                return "";
+            }
             return Element1.Source.AbsolutePath;
         }
         set
