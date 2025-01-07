@@ -139,7 +139,8 @@ public class BaseMediaPlayer : IBasicMediaPlayer
         Execute.OnUIThread(Element1.Stop); //had to put in the threading.
     }
     private int _privateL = -1;
-    public int Length()
+
+    public async Task<int> LengthAsync()
     {
         if (_privateL > -1)
         {
@@ -150,9 +151,23 @@ public class BaseMediaPlayer : IBasicMediaPlayer
         {
             throw new CustomBasicException($"Path At {TempPath} Does Not Exist");
         }
-
-        return ll1.Length(TempPath);
+        return await ll1.LengthAsync(TempPath);
     }
+
+    //public int Length()
+    //{
+    //    if (_privateL > -1)
+    //    {
+    //        return _privateL;
+    //    }
+
+    //    if (FileExists(TempPath) == false)
+    //    {
+    //        throw new CustomBasicException($"Path At {TempPath} Does Not Exist");
+    //    }
+
+    //    return ll1.Length(TempPath);
+    //}
     public event BasicDataFunctions.ErrorRaisedEventHandler? ErrorRaised;
     public virtual void AfterStartPlay() { }
     protected virtual void AfterPause() { }
@@ -180,11 +195,13 @@ public class BaseMediaPlayer : IBasicMediaPlayer
     }
     public async Task PlayAsync()
     {
-        await PlayAsync(Length(), 0);
+        int length = await LengthAsync();
+        await PlayAsync(length, 0);
     }
     public async Task PlayAsync(int position)
     {
-        await PlayAsync(Length(), position);
+        int length = await LengthAsync();
+        await PlayAsync(length, position);
     }
     public async Task PlayAsync(int length, int position)
     {
@@ -198,7 +215,7 @@ public class BaseMediaPlayer : IBasicMediaPlayer
             LengthValue = TimeSpan.FromSeconds(length);
             _privateL = length;
             PositionValue = TimeSpan.FromSeconds(position);
-            MediaLength = ll1.Length(TempPath);
+            MediaLength = await ll1.LengthAsync(TempPath);
             IsPlaying = true;
             bool sets = false;
 
@@ -232,4 +249,6 @@ public class BaseMediaPlayer : IBasicMediaPlayer
 
         }
     }
+
+    
 }

@@ -20,7 +20,7 @@ public class MP3Player : BaseMediaPlayer, IMP3Player
         {
             return "0:00";
         }
-        var songL = Length();
+        var songL = MediaLength; //already retrieved this.  means needs the lengths properly even for mp3.
         return $"{Math.Floor((double)songL / 60)}:{GetRight(songL)}";
     }
 

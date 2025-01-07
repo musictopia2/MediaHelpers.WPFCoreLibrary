@@ -11,10 +11,12 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BasicBlazorLibrary" Version="9.0.2" />
-    <PackageReference Include="CommonBasicLibraries" Version="9.0.12" />
-    <PackageReference Include="MediaHelpers.CoreLibrary" Version="9.0.29" />
-    <PackageReference Include="MediaHelpers.MediaLengthWindowsLibrary" Version="1.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="9.0.21" />
+    <PackageReference Include="CommonBasicLibraries" Version="9.0.13" />
+    <PackageReference Include="MediaHelpers.CoreLibrary" Version="9.0.37" />
+    
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="9.0.22" />
+    
+    <PackageReference Include="Musictopia.MediaHelpers.MediaLengthCoreLibrary" Version="9.0.3" />
     <PackageReference Include="WindowsKeyboardCapture" Version="9.0.1" />
     <PackageReference Include="WPFStartupLibrary" Version="9.0.1" />
   </ItemGroup>
