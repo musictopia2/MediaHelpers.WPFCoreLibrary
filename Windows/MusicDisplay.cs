@@ -3,8 +3,7 @@ public class MusicDisplay : UserControl
 {
     private IPlayPauseClass? _pauses;
     private readonly KeyboardHook _keys = new();
-    // Static dictionary to register external handlers
-    private static readonly Dictionary<EnumKey, Action> _extraHotkeys = [];
+    public static Action<EnumKey> ExtraHotKey { get; set; } = (EnumKey key) => { };
     public MusicDisplay()
     {
         MusicRegistrationHelpers.MusicControl = this;
@@ -36,22 +35,6 @@ public class MusicDisplay : UserControl
             _pauses.PlayPause();
             return;
         }
-        foreach (var item in _extraHotkeys)
-        {
-            if (key == item.Key)
-            {
-                item.Value?.Invoke();
-            }
-        }
-    }
-    public static void RegisterHotkey(EnumKey key, Action action)
-    {
-        _extraHotkeys[key] = action;
-    }
-
-    // Optional: method to clear handlers (useful for testing or unloading)
-    public static void UnregisterHotkey(EnumKey key)
-    {
-        _extraHotkeys.Remove(key);
+        ExtraHotKey.Invoke(key);
     }
 }
