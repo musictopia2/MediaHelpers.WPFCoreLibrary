@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -10,17 +10,15 @@
     <FeedType>Public</FeedType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="BasicBlazorLibrary" Version="9.0.69" />
-    <PackageReference Include="CommonBasicLibraries" Version="9.0.47" />
-    <PackageReference Include="MediaHelpers.CoreLibrary" Version="9.0.37" />
-    
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="9.0.80" />
-    
-    <PackageReference Include="Musictopia.MediaHelpers.MediaLengthCoreLibrary" Version="9.0.3" />
-    <PackageReference Include="WindowsKeyboardCapture" Version="9.0.2" />
-    <PackageReference Include="WPFStartupLibrary" Version="9.0.2" />
+    <PackageReference Include="BasicBlazorLibrary" Version="10.0.1" />
+    <PackageReference Include="CommonBasicLibraries" Version="10.0.1" />
+    <PackageReference Include="MediaHelpers.CoreLibrary" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="10.0.10" />
+    <PackageReference Include="Musictopia.MediaHelpers.MediaLengthCoreLibrary" Version="0.0.1" />
+    <PackageReference Include="WindowsKeyboardCapture" Version="10.0.1" />
+    <PackageReference Include="WPFStartupLibrary" Version="10.0.1" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="C:\VS\OneNet\Apps\CommandLines\PostBuildPackageHandler\bin\Release\net9.0\PostBuildPackageHandler.exe $(ProjectName) $(ProjectDir) $(ProjectFileName) $(TargetDir)" Condition="'$(Configuration)' == 'Release' and '$(RunPostBuildAppCondition)' == 'true'" />
+    <Exec Command="C:\VS\OneNet\Apps\CommandLines\PostBuildPackageHandler\bin\Release\net10.0\PostBuildPackageHandler.exe $(ProjectName) $(ProjectDir) $(ProjectFileName) $(TargetDir)" Condition="'$(Configuration)' == 'Release' and '$(RunPostBuildAppCondition)' == 'true'" />
   </Target>
 </Project>
