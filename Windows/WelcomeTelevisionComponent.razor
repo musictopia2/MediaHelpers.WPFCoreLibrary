@@ -9,3 +9,20 @@
 <div>
     Good Job So Far
 </div>
+@code{
+    protected override void OnInitialized()
+    {
+        bool rets;
+        rets = Begins!.CanPlay;
+
+        if (rets)
+        {
+            LoadEpisode();
+            //if you are able to play, then needs to run the video loader to load up.
+        }
+        else
+        {
+            Begins.StartLoadingPlayer = LoadEpisode; //blazor won't change because its going to xaml screen with little blazor.
+        }
+    }
+}

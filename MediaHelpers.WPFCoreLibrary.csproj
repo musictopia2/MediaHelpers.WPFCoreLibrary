@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net10.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows10.0.17763.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -10,13 +10,13 @@
     <FeedType>Public</FeedType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="BasicBlazorLibrary" Version="10.0.1" />
-    <PackageReference Include="CommonBasicLibraries" Version="10.0.1" />
-    <PackageReference Include="MediaHelpers.CoreLibrary" Version="10.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="10.0.10" />
-    <PackageReference Include="Musictopia.MediaHelpers.MediaLengthCoreLibrary" Version="0.0.1" />
-    <PackageReference Include="WindowsKeyboardCapture" Version="10.0.1" />
-    <PackageReference Include="WPFStartupLibrary" Version="10.0.1" />
+    <PackageReference Include="BasicBlazorLibrary" Version="10.0.10" />
+    <PackageReference Include="CommonBasicLibraries" Version="10.0.13" />
+    <PackageReference Include="MediaHelpers.CoreLibrary" Version="10.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="10.0.11" />
+    <PackageReference Include="Musictopia.MediaHelpers.MediaLengthCoreLibrary" Version="10.0.7" />
+    <PackageReference Include="WindowsKeyboardCapture" Version="10.0.7" />
+    <PackageReference Include="WPFStartupLibrary" Version="10.0.7" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="C:\VS\OneNet\Apps\CommandLines\PostBuildPackageHandler\bin\Release\net10.0\PostBuildPackageHandler.exe $(ProjectName) $(ProjectDir) $(ProjectFileName) $(TargetDir)" Condition="'$(Configuration)' == 'Release' and '$(RunPostBuildAppCondition)' == 'true'" />
