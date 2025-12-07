@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
     <TargetFramework>net10.0-windows10.0.17763.0</TargetFramework>
     <UseWPF>true</UseWPF>
@@ -11,9 +11,9 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BasicBlazorLibrary" Version="10.0.10" />
-    <PackageReference Include="CommonBasicLibraries" Version="10.0.13" />
+    <PackageReference Include="CommonBasicLibraries" Version="10.0.15" />
     <PackageReference Include="MediaHelpers.CoreLibrary" Version="10.0.8" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="10.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="9.0.120" />
     <PackageReference Include="Musictopia.MediaHelpers.MediaLengthCoreLibrary" Version="10.0.7" />
     <PackageReference Include="WindowsKeyboardCapture" Version="10.0.7" />
     <PackageReference Include="WPFStartupLibrary" Version="10.0.7" />

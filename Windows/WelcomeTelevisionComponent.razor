@@ -1,5 +1,5 @@
 ﻿@typeparam E
-@if (_rets == false)
+@if (rets == false)
 {
     <div style="font-size: 10vh">
         Waiting For Possible Remote Control
@@ -10,9 +10,10 @@
     Good Job So Far
 </div>
 @code{
+    bool rets;
     protected override void OnInitialized()
     {
-        bool rets;
+        
         rets = Begins!.CanPlay;
 
         if (rets)
